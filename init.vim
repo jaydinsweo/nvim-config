@@ -57,3 +57,46 @@ call plug#end()
 nmap <space> <leader>
 
 
+
+" Indentation Options
+set expandtab                  " convert tabs to spaces
+filetype plugin indent on      " Enable indentation rules that are file-type specific
+set tabstop=4                  " Indent using four spaces
+set autoindent                 " New lines inherit the indentation of previous lines
+
+
+" Text Rendering Options
+syntax enable                  " Enable syntax hightlighting
+set wrap                       " Enable line wrapping
+set linebreak                  " Avoid wrapping a line in the middle of a word
+set encoding=utf-8             " Use an encoding that supports unicode
+set scrolloff=5                " The number of screen lines to keep above and below the cursor
+set updatetime=300             " Longer updatetime
+
+
+" User Interface Options
+set mouse=a                    " Enable mouse usage (all modes)
+set number                     " Show line numbers on the sidebar
+set ruler                      " Always show cursor position - bottom right
+
+
+" Code Folding Options
+set foldmethod=indent          " Fold based on indentition levels
+set foldnestmax=3              " Fold up to three nested levels
+
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Normal mode non-recursive mapping
+" Go to the beginning of line
+nnoremap B ^       
+" Go to the end of line
+nnoremap E $
+" Delete to the end of line
+nnoremap D d$
+" Copy the text from the cursor pos to the end of line
+nnoremap Y y$
+" Quickly open .vimrc in new tab
+nnoremap <leader>w :x<CR>
