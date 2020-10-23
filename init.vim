@@ -98,7 +98,11 @@ nnoremap E $
 " Delete to the end of line
 nnoremap D d$
 " Copy the text from the cursor pos to the end of line
-nnoremap Y y$
+nnoremap Y yy
+" Open All Fold
+nnoremap <leader>, zR<CR>
+" Close all Fold
+nnoremap <leader>. zM<CR>
 " Quick save (if modified) and quit
 nnoremap <leader>w :w<CR>
 " Quick save
