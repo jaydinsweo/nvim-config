@@ -89,6 +89,7 @@ set foldnestmax=3              " Fold up to three nested levels
 set nobackup
 set nowritebackup
 
+
 " Normal mode non-recursive mapping
 " Go to the beginning of line
 nnoremap B ^       
@@ -98,5 +99,7 @@ nnoremap E $
 nnoremap D d$
 " Copy the text from the cursor pos to the end of line
 nnoremap Y y$
-" Quickly open .vimrc in new tab
-nnoremap <leader>w :x<CR>
+" Quick save (if modified) and quit
+nnoremap <leader>w :w<CR>
+" Quick save
+nnoremap <leader>x :x<CR>
