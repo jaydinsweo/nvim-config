@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+" --------------------------------------------------------------------------
 
 
 " Sidebar File Manager ----------------------------------------------------
@@ -15,9 +16,17 @@ nmap <leader>c :Commits<CR>
 nmap <leader>cb : BCommits<CR>
 nmap <leader>g :GFiles?<CR>
 
-" Git Wrapper for Vim -----------------------------------------------
+" Git Wrapper for Vim ------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 
+
+" Quick Surrounding Tags ----------------------------------------------------
+Plug 'tpope/vim-surround'
+
+
+
+
+" --------------------------------------------------------------------------
 call plug#end()
 
 " Set Space as leader key
