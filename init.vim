@@ -19,12 +19,22 @@ nmap <leader>g :GFiles?<CR>
 " Git Wrapper for Vim ------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 
-
 " Quick Surrounding Tags ----------------------------------------------------
 Plug 'tpope/vim-surround'
 
+" CoC completion with LSP suppport -------------------------------------------
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 " --------------------------------------------------------------------------
 call plug#end()
