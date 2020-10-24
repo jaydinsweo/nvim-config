@@ -36,26 +36,65 @@ inoremap <silent><expr> <Tab>
 " install global extensions and language client
 let g:coc_global_extensions = ['coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-rust-analyzer', 'coc-spell-checker', 'coc-tailwindcss', 'coc-yaml']
 
-" Code Formattter for other languages: Rust ------------------------------------------------
+" Code Formattter for other languages: Rust -----------------------------------
 Plug 'sbdchd/neoformat'
 " use fortmatprg as formatter
 let g:neoformat_try_formatprg = 1
-" auto save 
+" auto save
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
-" TypeScript and TSX support ---------------------------------------------------------------
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 
-" --------------------------------------------------------------------------
+" TypeScript and JavaScript ---------------------------------------------------
+Plug 'pangloss/vim-javascript'         " JavaScript support
+Plug 'peitalin/vim-jsx-typescript'     " TypeScript support
+Plug 'maxmellon/vim-jsx-pretty'        " JS,JSX syntax
+Plug 'leafgarland/typescript-vim'      " TS, TSx syntax
+
+
+" Status/ Tabline Bottom -------------------------------------------------------
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" air-line
+let g:airline_powerline_fonts = 1      " Use Powerline font
+let g:airline_theme='cobalt2'          " Set Cobalt 2 Theme
+
+if !exists('g:airline_symbols')        " Reset the symbol
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+
+"--------------------------------------------------------------------------
+
+
 call plug#end()
 
 " Set Space as leader key
 nmap <space> <leader>
-
 
 
 " Indentation Options
@@ -78,6 +117,11 @@ set updatetime=300             " Longer updatetime
 set mouse=a                    " Enable mouse usage (all modes)
 set number                     " Show line numbers on the sidebar
 set ruler                      " Always show cursor position - bottom right
+" Error symbols
+let g:syntastic_error_symbol = "✗"
+let syntastic_style_error_symbol = "✗"
+let g:syntastic_warning_symbol = "∙∙"
+let syntastic_style_warning_symbol = "∙∙"
 
 
 " Code Folding Options
@@ -92,7 +136,7 @@ set nowritebackup
 
 " Normal mode non-recursive mapping
 " Go to the beginning of line
-nnoremap B ^       
+nnoremap B ^
 " Go to the end of line
 nnoremap E $
 " Delete to the end of line
