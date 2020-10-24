@@ -2,15 +2,14 @@ call plug#begin('~/.vim/plugged')
 " --------------------------------------------------------------------------
 
 " Colorscheme -----------------------------------------------------------
-Plug 'hzchirs/vim-material'
-Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
 
 " Sidebar File Manager ----------------------------------------------------
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 " leader+q for open the file manager
 nnoremap <leader>q <cmd>CHADopen<cr>
+
 
 " Command Line Fuzzy Finder -----------------------------------------------
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -21,11 +20,14 @@ nmap <leader>c :Commits<CR>
 nmap <leader>cb : BCommits<CR>
 nmap <leader>g :GFiles?<CR>
 
+
 " Git Wrapper for Vim ------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 
+
 " Quick Surrounding Tags ----------------------------------------------------
 Plug 'tpope/vim-surround'
+
 
 " CoC completion with LSP suppport -------------------------------------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -47,6 +49,7 @@ let g:coc_global_extensions = ['coc-json', 'coc-prettier', 'coc-tsserver', 'coc-
 " Set the code action for CoC - for spell checker
 nmap <leader>a  <Plug>(coc-codeaction)
 
+
 " Code Formattter for other languages: Rust -----------------------------------
 Plug 'sbdchd/neoformat'
 " use fortmatprg as formatter
@@ -64,6 +67,11 @@ Plug 'pangloss/vim-javascript'         " JavaScript support
 Plug 'peitalin/vim-jsx-typescript'     " TypeScript support
 Plug 'maxmellon/vim-jsx-pretty'        " JS,JSX syntax
 Plug 'leafgarland/typescript-vim'      " TS, TSx syntax
+
+
+" Rust lang ------------------------------------------------------------------
+Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/cargo.vim'
 
 
 " Status/ Tabline Bottom -------------------------------------------------------
@@ -92,6 +100,7 @@ nmap <space> <leader>
 " Indentation Options
 set expandtab                  " convert tabs to spaces
 filetype plugin indent on      " Enable indentation rules that are file-type specific
+filetype plugin on
 set tabstop=4                  " Indent using four spaces
 set autoindent                 " New lines inherit the indentation of previous lines
 
