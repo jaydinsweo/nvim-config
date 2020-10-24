@@ -40,9 +40,7 @@ inoremap <silent><expr> <Tab>
 let g:coc_global_extensions = ['coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-rust-analyzer', 'coc-spell-checker', 'coc-tailwindcss', 'coc-yaml']
 
 " Set the code action for CoC - for spell checker
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
-
+nmap <leader>a  <Plug>(coc-codeaction)
 
 " Code Formattter for other languages: Rust -----------------------------------
 Plug 'sbdchd/neoformat'
