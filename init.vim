@@ -105,7 +105,7 @@ set updatetime=300             " Longer updatetime
 set mouse=a                    " Enable mouse usage (all modes)
 set number                     " Show line numbers on the sidebar
 set ruler                      " Always show cursor position - bottom right
-set signcolumn=auto
+set signcolumn=auto:1
 highlight clear SignColumn     " Remove the gray area (sign column)
 
 " Code Folding Options

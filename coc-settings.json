@@ -29,8 +29,8 @@
     "**/*.dll",
     "*.vim"
   ],
-  "diagnostic.errorSign": "✗",
-  "diagnostic.warningSign": "∆",
-  "diagnostic.infoSign": "!",
-  "diagnostic.hintSign": "#"
+  "diagnostic.errorSign": "⎯✗",
+  "diagnostic.warningSign": "⎯∆",
+  "diagnostic.infoSign": "⎯⏍",
+  "diagnostic.hintSign": "⎯✔︎"
 }
