@@ -1,6 +1,11 @@
 call plug#begin('~/.vim/plugged')
 " --------------------------------------------------------------------------
 
+" Colorscheme -----------------------------------------------------------
+Plug 'hzchirs/vim-material'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Sidebar File Manager ----------------------------------------------------
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
@@ -79,6 +84,7 @@ endif
 
 call plug#end()
 
+
 " Set Space as leader key
 nmap <space> <leader>
 
@@ -133,3 +139,11 @@ nnoremap <leader>. zM<CR>
 nnoremap <leader>w :w<CR>
 " Quick save
 nnoremap <leader>x :x<CR>
+
+
+" Colorscheme and True Colors
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'palenight'
+colorscheme material
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+set termguicolors
