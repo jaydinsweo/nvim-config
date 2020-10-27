@@ -32,5 +32,8 @@
   "diagnostic.errorSign": "⎯✗",
   "diagnostic.warningSign": "⎯∆",
   "diagnostic.infoSign": "⎯⏍",
-  "diagnostic.hintSign": "⎯✔︎"
+  "diagnostic.hintSign": "⎯✔︎",
+  "markdownlint.config": {
+    "line_length": false
+  }
 }

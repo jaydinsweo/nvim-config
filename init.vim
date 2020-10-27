@@ -27,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 
 " Quick Surrounding Tags ----------------------------------------------------
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 
 " CoC completion with LSP suppport -------------------------------------------
@@ -71,7 +72,6 @@ Plug 'leafgarland/typescript-vim'      " TS, TSx syntax
 
 " Rust lang ------------------------------------------------------------------
 Plug 'rust-lang/rust.vim'
-Plug 'rust-lang/cargo.vim'
 
 
 " Status/ Tabline Bottom -------------------------------------------------------
@@ -85,6 +85,11 @@ let g:airline_theme='cobalt2'          " Set Cobalt 2 Theme
 if !exists('g:airline_symbols')        " Reset the symbol
     let g:airline_symbols = {}
 endif
+
+
+" Wiki ------------------------------------------------------------
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/Documents/jaynguyens/KnowledgeBase/', 'nested_syntaxes':{'javascript': 'javascript', 'rust': 'rust'}}]
 
 
 "--------------------------------------------------------------------------
@@ -101,7 +106,8 @@ nmap <space> <leader>
 set expandtab                  " convert tabs to spaces
 filetype plugin indent on      " Enable indentation rules that are file-type specific
 filetype plugin on
-set tabstop=4                  " Indent using four spaces
+set tabstop=3                  " Indent using four spaces
+set shiftwidth=3 
 set autoindent                 " New lines inherit the indentation of previous lines
 
 
@@ -115,6 +121,7 @@ set updatetime=300             " Longer updatetime
 
 
 " User Interface Options
+set nocompatible
 set mouse=a                    " Enable mouse usage (all modes)
 set number                     " Show line numbers on the sidebar
 set ruler                      " Always show cursor position - bottom right
